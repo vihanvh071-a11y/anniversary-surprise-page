@@ -1,0 +1,76 @@
+Timer:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Click to View Surprise</title>
+    <link rel="stylesheet" href="new.css"> 
+    
+    <style>
+        .anniversary-heading {
+            text-align: center; 
+            color: #F8BBD0; 
+            font-size: 2.5em; 
+            font-family: 'Georgia', serif; 
+            margin-top: 30px; 
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="anniversary-heading">Happy 1ST Anniversary Babe 🎉</h1>
+   
+   
+    <div style="text-align: center; margin-top: 50vh; transform: translateY(-50%);">
+        
+        <div id="countdown" style="font-size: 2em; color: #E91E63; font-weight: bold;">
+            Loading Time...
+        </div>
+        
+        <a id="click-link" href="anniversary2 (1).html" style="font-size: 3em; color: #E91E63; text-decoration: none; font-weight: bold; display: none;">
+            Click Here! ❤️
+        </a>
+        
+    </div>
+
+    <script>
+        // 1. Target Time Set Karna (Aaj hi 8:00 PM par)
+        var countDownDate = new Date();
+        // setHours(hours, minutes, seconds, milliseconds)
+        // 20 ka matlab hai 8 PM (24-hour format)
+        countDownDate.setHours(20, 0, 0, 0); 
+
+        // Agar current time 8 PM se zyada ho chuka hai, toh target time agle din ka 8 PM ho jayega.
+        // Kyunki humein 'aaj' hi wish karna hai, isliye hum is line ko nahi daal rahe hain.
+
+        // Agar aapki ghadi mein abhi 8 PM ho chuka hai, toh yeh turant link dikha dega.
+
+        var x = setInterval(function() {
+            // Har second ka current time
+            var now = new Date().getTime();
+            
+            // Remaining time (milliseconds mein)
+            var distance = countDownDate.getTime() - now;
+
+            // Samay ko Ghante, Minute, Second mein badalna
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Agar remaining time 0 se bada hai, toh countdown dikhao
+            if (distance > 0) {
+                document.getElementById("countdown").innerHTML = 
+                    hours + "h " + minutes + "m " + seconds + "s ";
+            }
+
+            // Agar countdown khatam ho gaya hai (distance 0 se kam ho gayi)
+            if (distance < 0) {
+                clearInterval(x); // Timer band kar do
+                document.getElementById("countdown").innerHTML = "IT'S TIME! 🎉";
+                document.getElementById("click-link").style.display = "block"; // Click Here link dikhao
+            }
+        }, 1000); // Har 1 second (1000ms) par update karo
+    </script>
+</body>
+</html>
