@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Special Photos</title>
+    <link rel="stylesheet" href="new.css"> 
+    
+    <style>
+        body {
+            /* Flexbox se vertical layout */
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            margin: 0;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        /* Image ki styling aur transition */
+        img {
+            max-width: 90%;
+            height: auto;
+            border: 5px solid #E91E63; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px; 
+            border-radius: 8px;
+            /* Transition sabhi effects ke liye */
+            transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        img:hover {
+            transform: scale(0.97); /* Halka zoom-out */
+            border-color: #FFCDD2; 
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        img:active {
+            transform: scale(0.92); /* Dabne ka effect */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* GO BACK LINK STYLING */
+        .back-link {
+            position: fixed; /* Screen par fix rahega */
+            top: 15px;      
+            left: 15px;     
+            
+            /* Styling */
+            padding: 8px 12px;
+            text-decoration: none;
+            color: white;
+            background-color: #E91E63;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #C2185B; 
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="index.html" class="back-link">⬅️ Back to Timer</a>
+    
+    <img src="images/PhotoCollage_1730311919189.jpg" alt="Photo 1">
+    
+    <img src="images/IMG_20250929_154541.jpg" alt="Photo 2">
+   
+    <img src="images/1756293333321.jpg" alt="Photo 3">
+   
+    <img src="images/Image_20250929_160717.jpeg" alt="Photo 4">
+    <img src="images/1759060986237.jpg" alt="Photo 5">
+    <img src="images/Image_20250928_232226.jpeg" alt="Photo 6">
+     
+    <img src="images/IMG-20250106-WA0013.jpg" alt="Photo 7">
+     
+     
+    <img src="images/IMG_20250827_162742.jpg" alt="Photo 8">
+
+    <img src="images/1000049401.png" alt="Photo 9">
+
+</body>
+</html>
